@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chip the Bot</title>
+    <script src="js/talk.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <h1>Talk to Chip</h1>
+    <p id="response"></p>
+    <form id="talk" class="boxedin" onsubmit="return false;">
+      <input id="yousay" name="input" size="90" onkeydown="if (event.keyCode == 13) { doTalk(); }" placeholder="Message..." autocomplete="off"/>
+      <br/>
+      <!--<input id="talkbutton" type="button" value="talk" onclick="doTalk()"/>-->
+    </form>
+  </body>
+</html>
