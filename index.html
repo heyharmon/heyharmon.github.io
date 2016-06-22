@@ -1,20 +1,9 @@
 <!doctype html>
 <html>
   <head>
-    <title>Chip The Bot</title>
-    <script src="talk.js"></script>
-    <script>
-      var pb = new Pandorabot("aiaas.pandorabots.com", "1409612761147", "chip", "df02842140df124c272ce6909134f7de"); // These should match the creds with which you created the bot
-      function doTalk() {
-        var input = document.getElementById("yousay").value;
-        document.getElementById("yousay").value = "";
-        pb.talk(input, function(data) {
-          var response = data["responses"];
-          document.getElementById("response").innerHTML = response;
-          console.log(response);
-        });
-      }
-    </script>
+    <title>Talk.js Example</title>
+    <script src="js/talk.js"></script>
+    <script src="js/main.js"></script>
   </head>
   <body>
     <h1>Talk to a Pandorabot</h1>
