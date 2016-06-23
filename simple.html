@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Simple Bot</title>
+  </head>
+  <body>
+    <h1>Talk to Chip</h1>
+    <p id="response"></p>
+    <form id="user-input-form" onsubmit="return false;">
+      <input id="user-input" name="input" size="90" onkeydown="if (event.keyCode == 13) { doTalk(); }" placeholder="Message..." autocomplete="off"/>
+      <br/>
+      <!--<input id="talkbutton" type="button" value="talk" onclick="doTalk()"/>-->
+    </form>
+    <script src="vendor/pandorabots/talk-api.js"></script>
+    <script src="resources/simple-bot/js/main.js"></script>
+  </body>
+</html>
