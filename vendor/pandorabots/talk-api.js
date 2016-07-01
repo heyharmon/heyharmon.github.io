@@ -26,11 +26,11 @@
 
 function Pandorabot(host, app_id, botname, user_key) {
     this.host = host;
-    this.app_id = "1409612761147";
-    this.botname = "chip";
-    this.user_key = "df02842140df124c272ce6909134f7de";
+    this.app_id = app_id;
+    this.botname = botname;
+    this.user_key = user_key;
     this.sessionid = "";
-    this.protocol = "https";
+    this.protocol = "http";
 }
 
 Pandorabot.prototype.talk = function(input, fn) {

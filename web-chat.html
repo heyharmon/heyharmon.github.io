@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Chip Chat</title>
+        <link rel="stylesheet" href="resources/web-chat/css/style.css">
+  </head>
+
+  <body>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <div id="chatbox">
+        <div id="chatview">
+
+            <div id="chat-messages">
+
+              <div id="profile">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
+                  <p>Chip</p>
+                  <span>Online</span>
+              </div>
+
+              <!-- Starting bot chat -->
+            	<div class="message">
+        				<img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
+        				<div class="bubble">
+        					Hi! My name's Chip. I'm a highly intelligent robot.
+    				    </div>
+              </div>
+
+              <div class="message">
+        				<img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
+        				<div class="bubble">
+        					Looking to buy a new car, a used car, or re-finance?
+    				    </div>
+              </div>
+
+            </div><!-- /#chat-messages -->
+
+            <div id="sendmessage">
+            	<input id="user-input" type="text" onkeydown="if (event.keyCode == 13) { doTalk(); }" placeholder="Send message..." autocomplete="off" />
+                <button id="send" onclick="doTalk()"></button>
+            </div>
+
+        </div><!-- /#chatview -->
+    </div><!-- /#chatbox -->
+
+    <script src="vendor/pandorabots/talk-api.js"></script>
+    <script src="resources/web-chat/js/main.js"></script>
+  </body>
+</html>
