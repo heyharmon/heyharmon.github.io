@@ -2,16 +2,16 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Chip Chat</title>
-        <link rel="stylesheet" href="resources/web-chat/css/style.css">
+    <title>BloomIO Chat</title>
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
-
   <body>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
     <div id="chatbox">
         <div id="chatview">
 
-            <div id="chat-messages">
+            <div id="output-area">
 
               <div id="profile">
                   <img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
@@ -23,18 +23,18 @@
             	<div class="message">
         				<img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
         				<div class="bubble">
-        					Hi! My name's Chip. I'm a highly intelligent robot.
+        					Hi nice to see you {Ryan}!
     				    </div>
               </div>
 
               <div class="message">
         				<img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
         				<div class="bubble">
-        					Looking to buy a new car, a used car, or re-finance?
+        					Are you still looking at {buying a new car}?
     				    </div>
               </div>
 
-            </div><!-- /#chat-messages -->
+            </div><!-- /#output-area -->
 
             <div id="sendmessage">
             	<input id="user-input" type="text" onkeydown="if (event.keyCode == 13) { doTalk(); }" placeholder="Send message..." autocomplete="off" />
@@ -44,7 +44,13 @@
         </div><!-- /#chatview -->
     </div><!-- /#chatbox -->
 
-    <script src="vendor/pandorabots/talk-api.js"></script>
-    <script src="resources/web-chat/js/main.js"></script>
+    <!-- Include Firebase -->
+    <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
+    <!-- Include BloomIO Analytics -->
+    <script src="assets/js/analytics.js"></script>
+    <!-- Include Pandorabots API -->
+    <script src="vendor/pandorabots/talk.js"></script>
+    <!-- Include BloomIO Chat -->
+    <script src="assets/js/chat.js"></script>
   </body>
 </html>
