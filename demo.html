@@ -4,22 +4,46 @@
     <meta charset="UTF-8">
     <title>BloomIO Demo</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:100,400,600' rel='stylesheet' type='text/css'>
   </head>
   <body>
 
+    <style>
+    #analyticsbox {
+      font-family: "Open Sans", sans-serif;
+      width: 514px;
+      padding: 40px 0 0 40px;
+    }
+    #analyticsbox h1 {
+      font-size: 22px;
+    }
+    #analyticsbox h2 {
+      font-size: 16px;
+      padding: 5px 0 5px 0;
+    }
+    #analyticsbox ul {
+      list-style-type: none;
+    }
+    #analyticsbox li {
+      font-size: 14px;
+      padding: 0 0 7px 0;
+    }
+    </style>
+
     <!-- Visitor analytics widget -->
-    <h1>Your Analytics</h1>
+    <div id="analyticsbox">
+        <h1>Your Analytics</h1>
 
-    <section>
-      <h2>Device/User</h2>
-      <ul id="device"></ul>
-    </section>
+        <section>
+            <h2>Device/User</h2>
+            <ul id="device"></ul>
+        </section>
 
-    <section>
-      <h2>Recent Page Views</h2>
-      <ul id="recent-page-views"></ul>
-    </section>
+        <section>
+            <h2>Recent Page Views</h2>
+            <ul id="recent-page-views"></ul>
+        </section>
+    </div>
 
     <!-- Chatbox -->
     <div id="chatbox">
