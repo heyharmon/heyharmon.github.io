@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>BloomIO Demo</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+    <!-- Visitor analytics widget -->
+    <h1>Your Analytics</h1>
+
+    <section>
+      <h2>Device/User</h2>
+      <ul id="device"></ul>
+    </section>
+
+    <section>
+      <h2>Recent Page Views</h2>
+      <ul id="recent-page-views"></ul>
+    </section>
+
+    <!-- Chatbox -->
+    <div id="chatbox">
+        <div id="chatview">
+
+            <div id="output-area">
+
+              <div id="profile">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
+                  <p>Chip</p>
+                  <span>Online</span>
+              </div>
+
+              <!-- Starting bot chat -->
+            	<div class="message">
+        				<img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
+        				<div class="bubble">
+        					Hi nice to see you {Ryan}!
+    				    </div>
+              </div>
+
+              <div class="message">
+        				<img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
+        				<div class="bubble">
+        					Are you still looking at {buying a new car}?
+    				    </div>
+              </div>
+
+            </div><!-- /#output-area -->
+
+            <div id="sendmessage">
+            	<input id="user-input" type="text" onkeydown="if (event.keyCode == 13) { doTalk(); }" placeholder="Send message..." autocomplete="off" />
+                <button id="send" onclick="doTalk()"></button>
+            </div>
+
+        </div><!-- /#chatview -->
+    </div><!-- /#chatbox -->
+
+    <!-- Include Firebase -->
+    <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
+
+    <!-- Include BloomIO Analytics -->
+    <script src="assets/js/analytics.js"></script>
+
+    <!-- Include Pandorabots API + BloomIO Chat -->
+    <script src="vendor/pandorabots/talk.js"></script>
+    <script src="assets/js/chat.js"></script>
+
+    <!-- Include jQuery + BloomIO Demo -->
+    <script src='https://code.jquery.com/jquery-2.1.1.js'></script>
+    <script src="assets/js/demo.js"></script>
+  </body>
+</html>
