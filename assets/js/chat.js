@@ -29,32 +29,31 @@ var botAvatar = "https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.app
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
               }, 2200);
-            // First name does not exist
+          // First name does not exist
           } else if (v.first_name === undefined) {
               // First greeting
               setTimeout(function() {
-                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Can I help you get a new car?</div></div>`);
+                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Hi, my name is Chip</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 1000);
-              // Second greeting
-              setTimeout(function() {
-                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Btw my name is Chip</div></div>`);
-                  var afterBotResponse = document.getElementById("output-area");
-                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 3400);
+              }, 400);
               // Ask for users name
               setTimeout(function() {
-                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">What is your name?</div></div>`);
+                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">What's your first name?</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 4800);
+              }, 2600);
               // Show first name input, use doFirstName function
               setTimeout(function() {
-                  output_area.innerHTML = output_area.innerHTML + (`<input id="user-first-name-input" type="text" onkeydown="if (event.keyCode == 13) { doFirstName(); }" placeholder="My First Name is..." autocomplete="off" />`);
+                  output_area.innerHTML = output_area.innerHTML + (`
+                    <div id="profile" class="chat-input">
+                        <p>What is your first name?</p>
+                        <input id="user-first-name-input" type="text" onkeydown="if (event.keyCode == 13) { doFirstName(); }" placeholder="Type here..." autocomplete="off" />
+                    </div>
+                    `);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 5800);
+              }, 3600);
           }
       });
 

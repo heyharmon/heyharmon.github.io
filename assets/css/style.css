@@ -35,25 +35,39 @@
 	background:#fff;
 }
 #profile {
-  background:#fff url("https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-cover-img-blue.jpg?alt=media&token=9fdd1e21-1092-469a-8160-65bfb0efb5c7") no-repeat center center;
-  background-size: cover;
-  height:153px;
+  padding: 15px 0 15px 0;
 	overflow:hidden;
 	text-align:center;
-	color:#fff;
+  clear: both;
+}
+div.chat-jumbo {
+    color:#fff;
+    background:#fff url("https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-cover-img-blue.jpg?alt=media&token=9fdd1e21-1092-469a-8160-65bfb0efb5c7") no-repeat center center;
+    background-size: cover;
+}
+div.chat-input {
+    color: #03a1fc;
+    background: #fff;
+    margin-top: 15px;
 }
 #profile img {
 	width: 68px;
   height: 68px;
 	border: 3px solid #fff;
-	margin: 23px 0 0;
 	border-radius: 50%;
+}
+#profile input {
+  margin: 15px 0 0 0;
+  padding: 10px 0;
+  font-size: 16px;
+  border: 2px solid #03a1fc;
+  text-align: center;
 }
 #profile  p {
 	font-weight: 600;
-	font-size: 15px;
+	font-size: 16px;
 	opacity: 1;
-  padding: 8px 0 0 0;
+  padding: 10px 0 6px 0;
   line-height: 0px;
 }
 #profile span {
@@ -173,7 +187,6 @@
 	width:330px;
 	background:#fff;
 }
-
 #sendmessage input {
 	background: #fff;
 	border: none;
