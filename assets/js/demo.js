@@ -2,14 +2,14 @@
  * Device/User
  */
 var $device = $('#device');
-var $thisUser = $('#thisUser');
-var deviceRef = new Firebase(firebaseRoot + "/devices/" + bloomio_user_device);
-deviceRef.once('value', function (snapshot) {
+var deviceRef = devicesRef.child(bloomio_user_device);
+deviceRef.on('value', function (snapshot) {
   var v = snapshot.val();
   $device.prepend(
-  '<li>Name: ' + v.first_name + '</li>' +
-  '<li>Email: ' + v.email + '</li>' +
-  '<li>User Id: ' + v.user_id + '</li>' +
+  '<li>First Name: ' + v.first_name + '</li>' +
+  //'<li>Last Name: ' + v.last_name + '</li>' +
+  //'<li>Email: ' + v.email + '</li>' +
+  '<li>User ID: ' + v.user_id + '</li>' +
   '<li>Device: ' + v.device_agent + '</li>'
   );
 });
@@ -19,7 +19,7 @@ deviceRef.once('value', function (snapshot) {
  */
 var $recentPageViews = $('#recent-page-views');
 // Query 3 past visitors, from the end of dataset.
-var recentPageViewsRef = new Firebase(firebaseRoot + "/page_views/" + bloomio_user_device).limit(2);
+var recentPageViewsRef = new Firebase(firebaseRoot + "/page_views/" + bloomio_user_device).limit(5);
 recentPageViewsRef.on('child_added', function (snapshot) {
   var n = snapshot.name();
   var v = snapshot.val();

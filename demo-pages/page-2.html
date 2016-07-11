@@ -3,36 +3,73 @@
   <head>
     <meta charset="UTF-8">
     <title>BloomIO Demo</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:100,400,600' rel='stylesheet' type='text/css'>
   </head>
   <body>
 
     <style>
-    #analyticsbox {
+    html, body {
       font-family: "Open Sans", sans-serif;
+    }
+    ul.nav {
+      float: right;
+      padding: 40px 40px 0 0;
+    }
+    ul.nav li {
+      float: left; /* makes list horizontal */
+      list-style-type: none;
+      margin: 0 0 0 30px; /* separates 'buttons' */
+    }
+    ul.nav a {
+      padding: 10px 15px; /* makes target area bigger */
+      color: #03a1fc; /* rgba backup */
+      text-decoration: none;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    ul.nav a:hover,
+    ul.nav a:focus,
+    ul.nav a.active {
+      color: #fff;
+      background: #03a1fc; /* rgba backup */
+      -webkit-border-radius: 4px; /* safari & chrome */
+      -moz-border-radius: 4px; /* firefox */
+      border-radius: 4px; /* futureproof */
+    }
+    #analyticsbox {
       width: 514px;
       padding: 40px 0 0 40px;
     }
     #analyticsbox h1 {
       font-size: 22px;
+      padding: 0 0 10px 0;
     }
     #analyticsbox h2 {
       font-size: 16px;
-      padding: 5px 0 5px 0;
+      padding: 15px 0 10px 0;
     }
     #analyticsbox ul {
       list-style-type: none;
     }
     #analyticsbox li {
       font-size: 14px;
-      padding: 0 0 7px 0;
+      padding: 0 0 10px 0;
     }
     </style>
 
+    <!-- Navigation -->
+    <ul class="nav">
+      <li><a href="demo.html">Demo</a></li>
+      <li><a href="page-1.html">Page 1</a></li>
+      <li><a class="active" href="page-2.html">Page 2</a></li>
+    </ul>
+
     <!-- Visitor analytics widget -->
     <div id="analyticsbox">
-        <h1>Your Analytics</h1>
+        <h1>Inteligence</h1>
 
         <section>
             <h2>Device/User</h2>
@@ -57,21 +94,6 @@
                   <span>Online</span>
               </div>
 
-              <!-- Starting bot chat -->
-            	<div class="message">
-        				<img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
-        				<div class="bubble">
-        					Hi nice to see you {Ryan}!
-    				    </div>
-              </div>
-
-              <div class="message">
-        				<img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
-        				<div class="bubble">
-        					Are you still looking at {buying a new car}?
-    				    </div>
-              </div>
-
             </div><!-- /#output-area -->
 
             <div id="sendmessage">
@@ -86,14 +108,14 @@
     <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
 
     <!-- Include BloomIO Analytics -->
-    <script src="assets/js/analytics.js"></script>
+    <script src="../assets/js/analytics.js"></script>
 
     <!-- Include Pandorabots API + BloomIO Chat -->
-    <script src="vendor/pandorabots/talk.js"></script>
-    <script src="assets/js/chat.js"></script>
+    <script src="../vendor/pandorabots/talk.js"></script>
+    <script src="../assets/js/chat.js"></script>
 
     <!-- Include jQuery + BloomIO Demo -->
     <script src='https://code.jquery.com/jquery-2.1.1.js'></script>
-    <script src="assets/js/demo.js"></script>
+    <script src="../assets/js/demo.js"></script>
   </body>
 </html>

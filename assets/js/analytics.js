@@ -38,7 +38,7 @@ var firebaseRoot = new Firebase("https://bloom-io.firebaseio.com/"),
       var user_id = newUser.name();
 
       // Save new device
-      var newDevice = devicesRef.child(bloomio_user_device).push();
+      var newDevice = devicesRef.child(bloomio_user_device);
       newDevice.set({
           user_id: user_id,
           device_agent: navigator.userAgent
