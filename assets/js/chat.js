@@ -22,10 +22,10 @@ var botAvatar = "https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.app
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Nice to see you again ${v.first_name}</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 100);
+              }, 900);
               // Ask about auto loan
               setTimeout(function() {
-                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Are you still buying a new car?</div></div>`);
+                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Can I help you out with an auto loan? <br/><br/>I can help you apply, pre-qualify, or find your rate. <br/><br/>I can even help you determine how much car you can afford :)</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
               }, 2200);
@@ -124,12 +124,12 @@ function doFirstName() {
     var afterUserInput = document.getElementById("output-area");
     afterUserInput.scrollTop = afterUserInput.scrollHeight;
 
-    // Handle bots response
-    setTimeout(function() {
-        output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Got it!</div></div>`);
-        var afterBotResponse = document.getElementById("output-area");
-        afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-    }, 800);
+    // // Handle bots response
+    // setTimeout(function() {
+    //     output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Got it!</div></div>`);
+    //     var afterBotResponse = document.getElementById("output-area");
+    //     afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+    // }, 800);
 
     // Save users first name to Firebase
     var deviceFirstNameRef = devicesRef.child(bloomio_user_device);
