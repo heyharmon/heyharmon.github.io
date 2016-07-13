@@ -1,4 +1,3 @@
-
 var firebaseRoot = new Firebase("https://bloom-io.firebaseio.com/"),
     usersRef = firebaseRoot.child('users'),
     devicesRef = firebaseRoot.child('devices'),
