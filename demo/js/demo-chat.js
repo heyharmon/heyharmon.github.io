@@ -1,4 +1,4 @@
-var botAvatar = "https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35",
+ var botAvatar = "https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35",
     root = "https://bloom-io.firebaseio.com/",
     pb = new Pandorabot("aiaas.pandorabots.com", "1409612761147", "chip", "df02842140df124c272ce6909134f7de"),
     that = "",
@@ -71,7 +71,7 @@ var botAvatar = "https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.app
               }, 38000);
               // Bubble 14 LG
               setTimeout(function() {
-                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">(This is one of BloomCU’s actual clients. She loves KISS, so we sent her some Starchild gear to wear at the office. [winky emoji])</div></div>`);
+                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">(This is one of BloomCU’s actual clients. She loves KISS, so we sent her some Starchild gear to wear at the office. <i class="em em-wink"></i>)</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
               }, 45000);
@@ -101,7 +101,7 @@ var botAvatar = "https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.app
               }, 63000);
               // Bubble 19 MD
               setTimeout(function() {
-                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">${v.first_name}, go to the [auto loan page].</div></div>`);
+                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">${v.first_name}, go to the <a href="loans.html">Auto Loan Page</a>.</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
               }, 66000);
