@@ -41,7 +41,7 @@ var botAvatar = "https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.app
               }, 11000);
               // Bubble 9 LG
               setTimeout(function() {
-                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Dynamic personalization means that I change website content for individual users based on their interests--on the fly, automagically. [magic wand emoji]</div></div>`);
+                  output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Dynamic personalization means that I change website content for individual users based on their interests--on the fly, automagically. <i class="em em-heart_eyes"></i></div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
               }, 14000);
