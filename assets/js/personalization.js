@@ -1,6 +1,8 @@
 /**
- * Setup elements
+ * Setup dynamic page elements
  */
+
+// Homepage Jumbotron
 function personalizeHomeJumbotron(id, bgColor, h1Text, pText )
 {
   var element = document.getElementById(id),
@@ -12,18 +14,37 @@ function personalizeHomeJumbotron(id, bgColor, h1Text, pText )
 }
 
 /**
- * Evaluate bloomio_group cookie
- * Find value of bloomio_group, run personalization
+ * Quirksmode Cookie Functions
  */
+function createCookie(name,value,days) {
+  console.info('createCookie function running on analytics.js ', name);
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+  console.info('createCookie finished ', document.cookie);
+}
 
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+/**
+ * Personalization
+ * Evaluate bloomio_group cookie, run personalization
+ */
 // Check if page is loaded?
 // https://davidwalsh.name/document-readystate
+
+// Setup personalized content data like this: http://jsfiddle.net/bu5Av/2/
 
 (function() {
   var cookie = document.cookie.replace(/(?:(?:^|.*;\s*)bloomio_group\s*\=\s*([^;]*).*$)|^.*$/, "$1");
   if (cookie) {
     this.bloomio_group = cookie; {
-    console.info('Cookie found: ', document.cookie);
       if (cookie == 1) {
         // Run loan personalization
         personalizeHomeJumbotron('home-jumbotron','salmon', 'Get a New Ride', 'You seem to be interested in auto loans. It is not the same as the hero on the Auto Loans page, but it is similar. Pretty cool eh?');

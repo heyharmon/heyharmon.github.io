@@ -52,23 +52,3 @@ var firebaseRoot = new Firebase("https://bloom-io.firebaseio.com/"),
 
   }
 }());
-
-/**
- * Quirksmode Cookie Functions
- * Create, erase
- */
-function createCookie(name,value,days) {
-  console.info('createCookie function running on analytics.js ', name);
-	if (days) {
-		var date = new Date();
-		date.setTime(date.getTime()+(days*24*60*60*1000));
-		var expires = "; expires="+date.toGMTString();
-	}
-	else var expires = "";
-	document.cookie = name+"="+value+expires+"; path=/";
-  console.info('createCookie finished ', document.cookie);
-}
-
-function eraseCookie(name) {
-	createCookie(name,"",-1);
-}
