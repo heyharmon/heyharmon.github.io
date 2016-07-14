@@ -3,12 +3,12 @@
  */
 
 // Homepage Jumbotron
-function personalizeHomeJumbotron(id, bgColor, h1Text, pText )
+function personalizeHomeJumbotron(id, bgURL, h1Text, pText )
 {
   var element = document.getElementById(id),
       container = element.children[0],
       children = container.children;
-  element.style.backgroundColor = bgColor;
+  element.style.backgroundImage = bgURL;
   children[0].innerHTML = h1Text;
   children[1].innerHTML = pText;
 }
@@ -47,11 +47,11 @@ function eraseCookie(name) {
     this.bloomio_group = cookie; {
       if (cookie == 1) {
         // Run loan personalization
-        personalizeHomeJumbotron('home-jumbotron','salmon', 'Get a New Ride', 'You seem to be interested in auto loans. It is not the same as the hero on the Auto Loans page, but it is similar. Pretty cool eh?');
+        personalizeHomeJumbotron('home-jumbotron','url("https://meridiacu.com/wp-content/uploads/2016/04/hero-auto-loan-2.jpg?id=778")', 'Get a New Ride', 'You seem to be interested in auto loans. It is not the same as the hero on the Auto Loans page, but it is similar. Pretty cool eh?');
         console.info('Cookie is: ', cookie);
       } else if (cookie == 2) {
         // Run services personalization
-        personalizeHomeJumbotron('home-jumbotron','yellow', 'Got Direct Deposit?', 'You seem to be interested in services. It is not the same as the hero on the Services page, but it is similar. Pretty cool eh?');
+        personalizeHomeJumbotron('home-jumbotron','url("https://meridiacu.com/wp-content/uploads/2016/04/hero-courtesy-pay.jpg?id=543")', 'Got Direct Deposit?', 'You seem to be interested in services. It is not the same as the hero on the Services page, but it is similar. Pretty cool eh?');
         console.info('Cookie is: ', cookie);
       } else {
         // Do nothing

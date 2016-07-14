@@ -1,18 +1,45 @@
-/* Navigation */
-.bio-nav {
+
+/*
+* Navigation
+*/
+
+.navbar {
   margin-bottom: 0;
   border-bottom: 0;
 }
 
+/*
+* Jumbotrons
+*/
+
+.jumbotron {
+  background-size: cover;
+  color: #fff;
+}
+
+/* Home */
+#home-jumbotron {
+  height: 100vh;
+  background-image: url("http://bloomcu.com/wp-content/uploads/2013/06/home-hero-dad-black.jpg");
+
+}
+#home-jumbotron h1 {
+  font-size: 80px;
+}
+
+/* Subpages */
 #loans-jumbotron {
-  background-color: salmon;
+  background-image: url("https://meridiacu.com/wp-content/uploads/2016/04/hero-auto-loan-2.jpg?id=778");
 }
 
 #services-jumbotron {
-  background-color: yellow;
+  background-image: url("https://meridiacu.com/wp-content/uploads/2016/04/hero-courtesy-pay.jpg?id=543");
 }
 
-/* Demo Analytics Widget */
+/*
+* Analytics Widget
+*/
+
 .bio-analyticsbox ul {
   list-style-type: none;
   padding: 0px;
