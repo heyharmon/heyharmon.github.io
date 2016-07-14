@@ -19,12 +19,13 @@
 
 /* Home */
 #home-jumbotron {
-  height: 100vh;
+  /*height: 100vh;*/
+  padding: 140px 0 200px 0;
   background-image: url("http://bloomcu.com/wp-content/uploads/2013/06/home-hero-dad-black.jpg");
 
 }
 #home-jumbotron h1 {
-  font-size: 80px;
+  /*font-size: 80px;*/
 }
 
 /* Subpages */
