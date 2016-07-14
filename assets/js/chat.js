@@ -18,9 +18,9 @@ var botAvatar = "https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.app
           // First name exists
           if (v.first_name !== undefined) {
               // Personalize greeting
-              var smBubble = 2000,
-                  mdBubble = 3000,
-                  lgBubble = 4000
+              var smBubble = 4000,
+                  mdBubble = 5000,
+                  lgBubble = 8000;
               // Bubble 7 SM
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Nice to meet you, ${v.first_name}!</div></div>`);
@@ -32,79 +32,79 @@ var botAvatar = "https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.app
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">In this demo I’m going to show you how I dynamically personalize content for my website users.</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 3000);
+              }, 5000);
               // Bubble 8 SM
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">What is dynamic personalization?</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 6000);
+              }, 10000);
               // Bubble 9 LG
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Dynamic personalization means that I change website content for individual users based on their interests--on the fly, automagically. [magic wand emoji]</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 8000);
+              }, 13000);
               // Bubble 10 LG
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Personalization is cool because users are more likely to interact with content that’s highly relevant to them.</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 12000);
+              }, 20000);
               // Bubble 11 MD
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">At the end of the day, personalization helps you get more members and borrowers.</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 16000);
+              }, 27000);
               // Bubble 12 MD
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Plus, personalization makes you a marketing rockstar.</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 19000);
+              }, 32000);
               // Bubble 13 LG
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">[Picture of Tonya]]</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 22000);
+              }, 37000);
               // Bubble 14 LG
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">(This is one of BloomCU’s actual clients. She loves KISS, so we sent her some Starchild gear to wear at the office. [winky emoji])</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 26000);
+              }, 44000);
               // Bubble 15 MD
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Let me show you how dynamic personalization works.</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 30000);
+              }, 51000);
               // Bubble 16 SM
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Let’s pretend you want to get an auto loan.</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 33000);
+              }, 56000);
               // Bubble 17 MD
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">Notice that my homepage banner says nothing about auto loans.</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 35000);
+              }, 59000);
               // Bubble 18 SM
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">That’s about to change.</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 38000);
+              }, 62000);
               // Bubble 19 MD
               setTimeout(function() {
                   output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">${v.first_name}, go to the [auto loan page].</div></div>`);
                   var afterBotResponse = document.getElementById("output-area");
                   afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-              }, 41000);
+              }, 65000);
           // First name does not exist
           } else if (v.first_name === undefined) {
               // Bubble
