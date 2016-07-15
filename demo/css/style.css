@@ -52,3 +52,47 @@
   text-overflow: ellipsis;
   max-width: ;
 }
+
+/*
+* Chat bouncer
+*/
+.bouncer {
+  width: 2px;
+  height: 2px;
+  display: inline-block;
+  margin: 12px 1px;
+  position: relative;
+  background-color: #000;
+}
+
+.one {
+  animation-duration: .5s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.two {
+  animation-duration: .5s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: .1s;
+}
+
+.three {
+  animation-duration: .5s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: .2s;
+}
+
+@keyframes bounce {
+  from {
+    bottom: -6px;
+  }
+  to {
+    bottom: 0px;
+  }
+}

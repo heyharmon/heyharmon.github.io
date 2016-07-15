@@ -36,9 +36,6 @@ function eraseCookie(name) {
  * Personalization
  * Evaluate bloomio_group cookie, run personalization
  */
-// Check if page is loaded?
-// https://davidwalsh.name/document-readystate
-
 // Setup personalized content data like this: http://jsfiddle.net/bu5Av/2/
 
 (function() {

@@ -2,7 +2,7 @@ var botAvatar = "https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.app
     root = "https://bloom-io.firebaseio.com/",
     pb = new Pandorabot("aiaas.pandorabots.com", "1409612761147", "chip", "df02842140df124c272ce6909134f7de"),
     that = "",
-    init = true;
+    init = true,
     output_area = document.getElementById("output-area");
 
 /**
