@@ -10,9 +10,10 @@ var firebaseRoot = new Firebase("https://bloom-io.firebaseio.com/"),
  */
 (function() {
   var pb = this;
-  var cookie = document.cookie.replace(/(?:(?:^|.*;\s*)bloomio_user_device\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-  if (cookie) {
-      pb.bloomio_user_device = cookie; {
+  var deviceCookie = document.cookie.replace(/(?:(?:^|.*;\s*)bloomio_user_device\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+  if (deviceCookie) {
+    console.info('bloomio_user_device = ', deviceCookie);
+      pb.bloomio_user_device = deviceCookie; {
         // Send new page view to Firebase
         var newPageView = new Firebase(firebaseRoot + "/page_views/" + bloomio_user_device);
         newPageView.push({
@@ -21,10 +22,12 @@ var firebaseRoot = new Firebase("https://bloom-io.firebaseio.com/"),
         });
       }
   } else {
+    console.info('bloomio_user_device not found');
       // Generate new cookie
       var c = Math.round(Math.random() * 1000001);
       document.cookie = "bloomio_user_device=" + c;
       pb.bloomio_user_device = c;
+      console.info('Created bloomio_user_device = ', pb.bloomio_user_device);
 
       // Save new user
       var newUser = usersRef.push();
