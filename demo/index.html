@@ -120,6 +120,8 @@
     (function() {
           // Greet visitor based on existance of first_name
           var deviceRef = new Firebase(firebaseRoot + "/devices/" + bloomio_user_device);
+          deviceRef.on('value', function (snapshot) {
+              var v = snapshot.val();
 
           /**
            * If user has been to the Auto Loan Page
@@ -188,7 +190,7 @@
               document.getElementById("typing").remove();
                 output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
 
-                Thanks for viewing my personalization demo! <i class="em em-raised_hands"></i>
+                Thanks for viewing my personalization demo, ${v.first_name}! <i class="em em-raised_hands"></i>
 
                 </div></div>`);
                 var afterBotResponse = document.getElementById("output-area");
@@ -246,7 +248,6 @@
                 var afterBotResponse = document.getElementById("output-area");
                 afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
             }, 63000);
-
 
           /**
            * If user has NOT been to the Auto Loan Page
@@ -497,8 +498,9 @@
                     }, 10000);
                 } // End esle if
 
-            }); // End Firebase deviceRef.on
+            }); // End Firebase deviceRef.on 2
           } // End else
+        }); // End Firebase deviceRef.on 1
     }()); // End function
 
     /**
