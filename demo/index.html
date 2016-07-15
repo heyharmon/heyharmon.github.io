@@ -38,8 +38,7 @@
             <li><a href="services.html">Services</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a onclick="eraseCookie(bloomio_group)" href="#">Erase Personalization</a></li>
-            <li><a onclick="eraseCookie(bloomio_user_device)" href="#">Erase Device</a></li>
+            <li><a href="http://bloomcu.com" target="_blank">Back to BloomCU.com</a></li>
           </ul>
         </div>
       </div><!-- /.container -->
@@ -220,11 +219,17 @@
      */
     function doFirstName() {
 
+        // Grab name from input field
         var user_first_name_input = document.getElementById("user-first-name-input").value;
+
+        // Remove input field
+        document.getElementById("user-first-name-input").remove();
+
+        // Store name in cookie
         createCookie('bloomio_first_name','user_first_name_input',30);
         console.info('Cookie Created: bloomio_first_name = ', user_first_name_input);
 
-        // Output users input to chat
+        // Output users name to chat
         output_area.innerHTML = output_area.innerHTML + (`<div class="message right"><div class="bubble">My name is ${user_first_name_input}</div></div>`);
         var afterUserInput = document.getElementById("output-area");
         afterUserInput.scrollTop = afterUserInput.scrollHeight;
