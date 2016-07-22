@@ -6,6 +6,9 @@
  // Personalization Group cookie
 var groupCookie = document.cookie.replace(/(?:(?:^|.*;\s*)bloomio_group\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
+ // Bloomio Demo Cookie
+var demoCompleteCookie = document.cookie.replace(/(?:(?:^|.*;\s*)bloomio_demo_complete\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
 /**
  * Setup dynamic page elements
  *

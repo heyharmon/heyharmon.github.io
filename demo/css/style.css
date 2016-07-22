@@ -8,6 +8,24 @@
   border-bottom: 0;
 }
 
+.navbar-brand {
+  height: 80px;
+  padding: 22px 15px;
+}
+
+.navbar-default {
+  background-color: #ffffff;
+}
+
+.navbar-brand > img {
+  height: 33px;
+}
+
+.nav > li > a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 /*
 * Jumbotrons
 */
