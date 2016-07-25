@@ -29,7 +29,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">BloomIO</a>
+          <a class="navbar-brand" href="#">
+            <img src="http://bloomcu.com/wp-content/uploads/2016/06/logo-new-pink-large-2.png" alt="BloomCU Logo">
+          </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -138,8 +140,259 @@
     <script src="../vendor/pandorabots/talk.js"></script>
     <script src="js/demo-chat.js"></script>
 
+    <!-- Page Specific Chat Sequence -->
+    <script>
+    /**
+     * GREETING FUNCTION
+     * If first_name is undefined, display generic greeting
+     * Else, display personalized greeting
+     */
+    (function() {
+          // Greet visitor based on existance of first_name
+          var deviceRef = new Firebase(firebaseRoot + "/devices/" + bloomio_user_device);
+          deviceRef.on('value', function (snapshot) {
+              var v = snapshot.val();
+              // First name exists
+              if (v.first_name !== undefined) {
+                  // Homepage sequence
+                  // Bubble 7 SM
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
 
-    <!-- Cookie Beacon: Auto Loan Page Visited -->
+                      Nice to meet you, ${v.first_name}!
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 7 MD
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      In this demo I’m going to show you how I dynamically personalize content for my website users.
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 8 SM
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      What is dynamic personalization? Here's an explanation:
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 9 LG
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      Dynamic personalization means that I change website content for individual users based on their interests--on the fly, automagically. <i class="em em-heart_eyes"></i>
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 10 LG
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      Personalization is cool because users are more likely to interact with content that’s highly relevant to them.
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 11 MD
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      At the end of the day, personalization helps credit unions get more members and borrowers.
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 12 MD
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      Plus, personalization makes you a marketing rockstar.
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 13 LG
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      [Picture of Tonya]]
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 14 LG
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      (This is one of BloomCU’s actual clients. She loves KISS, so we sent her some Starchild gear to wear at the office. <i class="em em-wink"></i>)
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 15 MD
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      Let me show you how dynamic personalization works.
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 16 SM
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      Let’s pretend you want to get an auto loan.
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 17 MD
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      Notice that my homepage banner says nothing about auto loans.
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 18 SM
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      That’s about to change.
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`
+                        <div id="profile" class="chat-input">
+                            <p>Navigated to Direct Deposit Page</p>
+                        </div>
+                        `);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+
+
+                  // Loans page sequence
+                  // Typing
+                  setTimeout(function() {
+                      output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 1);
+                  // Bubble 20 MD
+                  setTimeout(function() {
+                    document.getElementById("typing").remove();
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      Thanks for coming to my direct deposit page, ${v.first_name}. I’ve logged your visit in my database:
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 2000);
+                        // Typing
+                        setTimeout(function() {
+                            output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                            var afterBotResponse = document.getElementById("output-area");
+                            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                        }, 9000);
+                  // Bubble 21 MD
+                  setTimeout(function() {
+                    document.getElementById("typing").remove();
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      <b>User</b><br/>First Name: ${v.first_name}<br/><br/><b>Recent Page Views</b><br/>Direct Deposit<br/>Homepage
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 14000);
+                        // Typing
+                        setTimeout(function() {
+                            output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                            var afterBotResponse = document.getElementById("output-area");
+                            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                        }, 17000);
+                  // Bubble 22 MD
+                  setTimeout(function() {
+                    document.getElementById("typing").remove();
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      Since you visited the direct deposit page, I’m guessing you're interested in making payday easier.
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 21500);
+                        // Typing
+                        setTimeout(function() {
+                            output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                            var afterBotResponse = document.getElementById("output-area");
+                            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                        }, 25000);
+                  // Bubble 23 MD
+                  setTimeout(function() {
+                    document.getElementById("typing").remove();
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      So, I’m going to change the homepage banner to be a direct deposit promotion.
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 30300);
+                        // Typing
+                        setTimeout(function() {
+                            output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                            var afterBotResponse = document.getElementById("output-area");
+                            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                        }, 37000);
+                  // Bubble 24 MD
+                  setTimeout(function() {
+                    document.getElementById("typing").remove();
+                      output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+                      ${v.first_name}, go back to the <a href="index.html">Homepage</a>
+
+                      </div></div>`);
+                      var afterBotResponse = document.getElementById("output-area");
+                      afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+                  }, 40000);
+
+              // First name does not exist
+              } else if (v.first_name === undefined) {
+
+              }
+          });
+
+    }());
+    </script>
+
+    <!-- Cookie Beacon: Direct Deposit Page Visited -->
     <script>
     createCookie('bloomio_group','2',30)
     console.info('bloomio_group = ', 2);
