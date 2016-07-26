@@ -129,12 +129,12 @@
     console.info('groupCookie = ', groupCookie);
     console.info('demoCompleteCookie = ', demoCompleteCookie);
     console.info('firstNameCookie = ', firstNameCookie);
+
     /**
-     * GREETING FUNCTION
-     * If first_name is undefined, display generic greeting
-     * Else, display personalized greeting
+     * Have first name
+     *
      */
-    if (firstNameCookie !== "") {
+    if (firstNameCookie !== "" && demoCompleteCookie == "") {
         // Bubble 7 SM
         setTimeout(function() {
             output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
@@ -274,8 +274,6 @@
             var afterBotResponse = document.getElementById("output-area");
             afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
         }, 1);
-
-
         // Loans page sequence
         // Typing
         setTimeout(function() {
@@ -362,9 +360,392 @@
             var afterBotResponse = document.getElementById("output-area");
             afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
         }, 40000);
-
-    // First name does not exist
     }
+
+
+
+
+
+
+
+    /**
+     * No first name
+     *
+     */
+    if (firstNameCookie == "") {
+            // Typing
+            setTimeout(function() {
+                output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                var afterBotResponse = document.getElementById("output-area");
+                afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+            }, 50);
+      // Bubble 1 SM
+      setTimeout(function() {
+        document.getElementById("typing").remove();
+          output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+          Hi! Welcome to BloomCU’s personalization demo!</div></div>`);
+
+          var afterBotResponse = document.getElementById("output-area");
+          afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+      }, 2300);
+            // Typing
+            setTimeout(function() {
+                output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                var afterBotResponse = document.getElementById("output-area");
+                afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+            }, 2600);
+      // Bubble 2 MD
+      setTimeout(function() {
+        document.getElementById("typing").remove();
+          output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+          My name is Chip and I’m the brain of this website.</div></div>`);
+
+          var afterBotResponse = document.getElementById("output-area");
+          afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+      }, 7600);
+            // Typing
+            setTimeout(function() {
+                output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                var afterBotResponse = document.getElementById("output-area");
+                afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+            }, 7900);
+      // Bubble 3 SM
+      setTimeout(function() {
+        document.getElementById("typing").remove();
+          output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+          What is your name?
+
+          </div></div>`);
+          var afterBotResponse = document.getElementById("output-area");
+          afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+      }, 9900);
+      // Bubble 4
+      setTimeout(function() {
+          output_area.innerHTML = output_area.innerHTML + (`
+            <div id="profile" class="chat-input">
+                <p>What is your first name?</p>
+                <input id="user-first-name-input" type="text" onkeydown="if (event.keyCode == 13) { doFirstName(); }" placeholder="My first name is..." autocomplete="off" />
+            </div>
+            `);
+          var afterBotResponse = document.getElementById("output-area");
+          afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+      }, 10000);
+    } // End if
+
+
+
+
+
+
+
+
+
+    /**
+     * Demo COMPLETE (cookie 3)
+     *
+     */
+     if (demoCompleteCookie == 1  && firstNameCookie !== "") {
+            // Typing
+            setTimeout(function() {
+                output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                var afterBotResponse = document.getElementById("output-area");
+                afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+            }, 1);
+      setTimeout(function() {
+        document.getElementById("typing").remove();
+          output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+          Thanks for viewing BloomCU's personalization demo! If you want to learn more about personalization, <a href="http://bloomcu.com/contact-us/" target="_blank">contact us</a>. You can also <a href="restart.html">restart this demo</a>.
+
+          </div></div>`);
+          var afterBotResponse = document.getElementById("output-area");
+          afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+      }, 1200);
+
+    } // End if
+
+
+
+
+
+
+
+
+
+    /**
+     * doFirstName
+     * Save users first name to cookie & firebase
+     */
+    function doFirstName() {
+
+        // Grab name from input field
+        var user_first_name_input = document.getElementById("user-first-name-input").value;
+
+        // Remove input field
+        document.getElementById("user-first-name-input").remove();
+
+        // Store name in cookie
+        createCookie('bloomio_first_name',user_first_name_input,30)
+        // Name Cookie
+        var firstNameCookie = document.cookie.replace(/(?:(?:^|.*;\s*)bloomio_first_name\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        console.info('Cookie Created: firstNameCookie = ', firstNameCookie);
+
+        // Output users name to chat
+        output_area.innerHTML = output_area.innerHTML + (`<div class="message right"><div class="bubble">My name is ${firstNameCookie}</div></div>`);
+        var afterUserInput = document.getElementById("output-area");
+        afterUserInput.scrollTop = afterUserInput.scrollHeight;
+
+        // Save users first name to Firebase
+        var deviceFirstNameRef = devicesRef.child(bloomio_user_device);
+        deviceFirstNameRef.update({
+            first_name: firstNameCookie
+        });
+
+        /**
+         * Demo Step 2
+         *
+         */
+        // Typing
+        setTimeout(function() {
+            output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 1);
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            Nice to meet you, ${firstNameCookie}!
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 1900);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 4000);
+        // Bubble 7 LG
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            In this demo I’m going to show you how I dynamically personalize content for my website users.
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 9000);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 13000);
+        // Bubble 8 SM
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            What is dynamic personalization? Here's an explanation:
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 18000);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 20000);
+        // Bubble 9 LG
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            Dynamic personalization means that I change website content for individual users based on their interests--on the fly, automagically. <i class="em em-heart_eyes"></i>
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 27000);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 34000);
+        // Bubble 10 LG
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            Personalization is cool because users are more likely to interact with content that’s highly relevant to them.
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 39000);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 46000);
+        // Bubble 11 MD
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            At the end of the day, personalization helps credit unions get more members and borrowers.
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 49500);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 54000);
+        // Bubble 12 MD
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            Plus, personalization makes you a marketing rockstar.
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 59000);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 64500);
+        // Bubble 13 LG
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            <img src="img/tonya_gail_kiss.jpg" height="253" width="188">
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight + "200px";
+        }, 70000);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 70000);
+        // Bubble 14 LG
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            (This is one of BloomCU’s actual clients. She loves KISS, so we sent her some Starchild gear to wear at the office. <i class="em em-wink"></i>)
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 84000);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 87000);
+        // Bubble 15 MD
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            Let me show you how dynamic personalization works.
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 92000);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 95000);
+        // Bubble 16 SM
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            Let’s pretend you want to become a member.
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 98500);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 111000);
+        // Bubble 17 MD
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            You may have noticed that my homepage banner says nothing about membership.
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 115000);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 120000);
+        // Bubble 18 SM
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            That’s about to change now that you have visited the membership page.
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 125500);
+              // Typing
+              setTimeout(function() {
+                  output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
+                  var afterBotResponse = document.getElementById("output-area");
+                  afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+              }, 128000);
+        // Bubble 19 MD
+        setTimeout(function() {
+          document.getElementById("typing").remove();
+            output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
+
+            ${firstNameCookie}, go back to the <a href="index.html">Homepage</a>.
+
+            </div></div>`);
+            var afterBotResponse = document.getElementById("output-area");
+            afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+        }, 133000);
+    };
     </script>
 
     <!-- Cookie Beacon: Memberhsip Page Visited -->
