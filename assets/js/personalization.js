@@ -59,11 +59,11 @@ function eraseCookie(name) {
 (function() {
       if (groupCookie == 1) {
         // Auto Loan personalization
-        personalizeHomeJumbotron('home-jumbotron','url("https://meridiacu.com/wp-content/uploads/2016/04/hero-auto-loan-2.jpg?id=778")', 'Get $300 towards your new ride', 'You seem to be interested in auto loans. It is not the same as the hero on the Auto Loans page, but it is similar. Pretty cool eh?');
+        personalizeHomeJumbotron('home-jumbotron','url("https://meridiacu.com/wp-content/uploads/2016/04/hero-auto-loan-2.jpg?id=778")', 'Get $300 <br/>towards your new ride!', 'The best fake auto loans in the world. For real.');
         console.info('Personalization = (1) Auto Loan');
       } else if (groupCookie == 2) {
         // Membership personalization
-        personalizeHomeJumbotron('home-jumbotron','url("https://meridiacu.com/wp-content/uploads/2016/04/hero-courtesy-pay.jpg?id=543")', 'Get $100 when you join us!', 'You seem to be interested in membership. It is not the same as the hero on the Membership page, but it is similar. Pretty cool eh?');
+        personalizeHomeJumbotron('home-jumbotron','url("https://meridiacu.com/wp-content/uploads/2016/04/hero-courtesy-pay.jpg?id=543")', 'Get $100 <br/>when you join us!', 'Just because we’re fake doesn’t mean we’re superficial. Join our fake family today.');
         console.info('Personalization = (2) Membership');
       } else {
         // Do nothing
