@@ -9,6 +9,9 @@ var groupCookie = document.cookie.replace(/(?:(?:^|.*;\s*)bloomio_group\s*\=\s*(
  // Bloomio Demo Cookie
 var demoCompleteCookie = document.cookie.replace(/(?:(?:^|.*;\s*)bloomio_demo_complete\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
+ // Name Cookie
+var firstNameCookie = document.cookie.replace(/(?:(?:^|.*;\s*)bloomio_first_name\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
 /**
  * Setup dynamic page elements
  *
@@ -56,12 +59,12 @@ function eraseCookie(name) {
 (function() {
       if (groupCookie == 1) {
         // Auto Loan personalization
-        personalizeHomeJumbotron('home-jumbotron','url("https://meridiacu.com/wp-content/uploads/2016/04/hero-auto-loan-2.jpg?id=778")', 'Get a New Ride', 'You seem to be interested in auto loans. It is not the same as the hero on the Auto Loans page, but it is similar. Pretty cool eh?');
+        personalizeHomeJumbotron('home-jumbotron','url("https://meridiacu.com/wp-content/uploads/2016/04/hero-auto-loan-2.jpg?id=778")', 'Get $300 towards your new ride', 'You seem to be interested in auto loans. It is not the same as the hero on the Auto Loans page, but it is similar. Pretty cool eh?');
         console.info('Personalization = (1) Auto Loan');
       } else if (groupCookie == 2) {
-        // Direct Deposit personalization
-        personalizeHomeJumbotron('home-jumbotron','url("https://meridiacu.com/wp-content/uploads/2016/04/hero-courtesy-pay.jpg?id=543")', 'Got Direct Deposit?', 'You seem to be interested in services. It is not the same as the hero on the Services page, but it is similar. Pretty cool eh?');
-        console.info('Personalization = (2) Direct Deposit');
+        // Membership personalization
+        personalizeHomeJumbotron('home-jumbotron','url("https://meridiacu.com/wp-content/uploads/2016/04/hero-courtesy-pay.jpg?id=543")', 'Get $100 when you join us!', 'You seem to be interested in membership. It is not the same as the hero on the Membership page, but it is similar. Pretty cool eh?');
+        console.info('Personalization = (2) Membership');
       } else {
         // Do nothing
       }
