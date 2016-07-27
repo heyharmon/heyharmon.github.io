@@ -1,6 +1,7 @@
+body { padding-top: 56px; }
 
 /*
-* Navigation
+* Navigation Global
 */
 
 .navbar {
@@ -8,22 +9,45 @@
   border-bottom: 0;
 }
 
-.navbar-brand {
+.nav > li > a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* Demo Navbar */
+
+.navbar-default.navbar-demo {
+  background-color: #f11e81;
+}
+
+.navbar-demo a.navbar-brand {
+  height: 56px;
+  padding: 14px 15px;
+}
+
+.navbar-demo .navbar-brand > img {
+  height: 26px;
+}
+
+.nav.navbar-right > li > a {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  color: #ffffff;
+}
+
+/* ACME Navbar */
+
+.navbar-default.navbar-acme {
+  background-color: #ffffff;
+}
+
+.navbar-acme a.navbar-brand {
   height: 80px;
   padding: 22px 15px;
 }
 
-.navbar-default {
-  background-color: #ffffff;
-}
-
-.navbar-brand > img {
+.navbar-acme .navbar-brand > img {
   height: 33px;
-}
-
-.nav > li > a {
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 /*
