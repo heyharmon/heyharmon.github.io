@@ -27,6 +27,8 @@ function personalizeHomeJumbotron(id, bgURL, h1Text, pText )
   element.style.backgroundImage = bgURL;
   children[0].innerHTML = h1Text;
   children[1].innerHTML = pText;
+
+  // If personalization is successful, Store the impression in session object
 }
 
 /**
