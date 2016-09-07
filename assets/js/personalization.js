@@ -7,6 +7,9 @@
 var groupCookie = document.cookie.replace(/(?:(?:^|.*;\s*)bloomio_group\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
  // Bloomio Demo Cookie
+var stageOneCompleted = document.cookie.replace(/(?:(?:^|.*;\s*)bloomio_stage_one_complete\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+ // Bloomio Demo Cookie
 var demoCompleteCookie = document.cookie.replace(/(?:(?:^|.*;\s*)bloomio_demo_complete\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
  // Name Cookie

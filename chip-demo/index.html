@@ -155,6 +155,7 @@
     <!-- Page Specific Chat Sequence -->
     <script>
     console.info('groupCookie = ', groupCookie);
+    console.info('stageOneCompleted = ', stageOneCompleted);
     console.info('demoCompleteCookie = ', demoCompleteCookie);
     console.info('firstNameCookie = ', firstNameCookie);
 
@@ -162,7 +163,7 @@
      * Demo Step 1
      *
      */
-    if (demoCompleteCookie == "") {
+    if (demoCompleteCookie != 1 && stageOneCompleted != 1) {
             // Typing
             setTimeout(function() {
                 output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
@@ -237,7 +238,7 @@
      *
      * After visiting AUTO LOAN page
      */
-     if (groupCookie == 1 && demoCompleteCookie == "" && firstNameCookie !== "") {
+     if (groupCookie == 1 && stageOneCompleted == 1) {
             // Typing
             setTimeout(function() {
                 output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
@@ -386,7 +387,7 @@
      *
      * After visiting MEMBERSHIP page (cookie 2)
      */
-     if (groupCookie == 2 && demoCompleteCookie == "" && firstNameCookie !== "") {
+     if (groupCookie == 2 && stageOneCompleted == 1) {
             // Typing
             setTimeout(function() {
                 output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
@@ -533,7 +534,7 @@
      * Demo COMPLETE (cookie 3)
      *
      */
-     if (demoCompleteCookie == 1  && firstNameCookie !== "") {
+     if (demoCompleteCookie == 1) {
             // Typing
             setTimeout(function() {
                 output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
@@ -832,6 +833,9 @@
             </div></div>`);
             var afterBotResponse = document.getElementById("output-area");
             afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
+            // stageOneCompleted = 1
+            createCookie('bloomio_stage_one_complete', 1,30)
+            console.log('bloomio_stage_one_complete set to=', 1)
         }, 133000);
 
     };
