@@ -1,6 +1,22 @@
 body { padding-top: 56px; }
 
 /*
+* Buttons
+*/
+
+.btn-primary {
+    background-color: #8bc54e;
+    border-color: #8bc54e;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #79b738;
+    border-color: #79b738;
+}
+
+/*
 * Navigation Global
 */
 
