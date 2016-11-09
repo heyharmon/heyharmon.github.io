@@ -40,8 +40,6 @@
   -webkit-transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
 	  -webkit-perspective: 1000;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcBAMAAACAI8KnAAAABGdBT…9eLAfyYhrIWNOSmfZkVlH2Kpm9Z+bJeh68oSYmnlGMnv1X7RZ2SET5id+LAAAAAElFTkSuQmCC);
-}
 }
 
 #chatbox.hide {
