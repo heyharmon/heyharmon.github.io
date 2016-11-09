@@ -17,9 +17,81 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
-    <script src="https://cdn.optimizely.com/js/6925800060.js"></script>
   </head>
   <body>
+
+    <!-- Chatbot -->
+    <div id="show-chatbox-btn">
+      <div class="all-bouncers">
+        <div class="bouncer one"></div>
+        <div class="bouncer two"></div>
+        <div class="bouncer three"></div>
+      </div>
+    </div>
+
+    <div id="chatbox" class="show">
+      <div id="hide-chatbox-btn" class="header-buttons">
+        <div class="header-button"></div>
+      </div>
+
+      <div id="output-area">
+        <div id="profile" class="chat-jumbo">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
+            <p>Chip <span>Online</span></p>
+        </div>
+      </div>
+
+      <!-- <div id="sendmessage">
+        <input id="user-input" type="text" onkeydown="if (event.keyCode == 13) { doTalk(); }" placeholder="Send message..." autocomplete="off" />
+          <button id="send" onclick="doTalk()"></button>
+      </div> -->
+    </div>
+
+    <script>
+      /**
+       * SHOW/HIDE CHATBOX
+       *
+       */
+
+      // DOM refs
+      var chatBox = document.getElementById('chatbox');
+      var showChatboxBtn = document.getElementById('show-chatbox-btn');
+      var hideChatboxBtn = document.getElementById('hide-chatbox-btn');
+
+      // function doIt() {
+      //  console.log('show-chatbox-btn clicked');
+      // }
+      //
+      // document.getElementById('show-chatbox-btn').addEventListener('click', doIt);
+
+      // http://youmightnotneedjquery.com/#add_class
+      function addClass(el, className) {
+          if (el.classList) { el.classList.add(className); }
+          else { el.className += ' ' + className; }
+      }
+
+      // http://youmightnotneedjquery.com/#remove_class
+      function removeClass(el, className) {
+          if (el.classList) { el.classList.remove(className); }
+          else { el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '); }
+      }
+
+      // Show Chatbox
+      function showChatBox() {
+          addClass(chatBox, 'show');
+      }
+
+      // Hide Chatbox
+      function hideChatBox() {
+          removeClass(chatBox, 'show');
+      }
+
+      // Attach the click handler to fab and hide button when the page loads.
+      // window.addEventListener('load', function() {
+          showChatboxBtn.addEventListener('click', showChatBox);
+          hideChatboxBtn.addEventListener('click', hideChatBox);
+      // });
+    </script>
 
     <!-- Google Tag Manager -->
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5CRW4D"
@@ -111,26 +183,6 @@
     <footer>
     </footer>
 
-    <!-- Chatbot -->
-    <div id="chatbox">
-        <div id="chatview">
-
-            <div id="output-area">
-              <div id="profile" class="chat-jumbo">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
-                  <p>Chip</p>
-                  <span>Online</span>
-              </div>
-            </div>
-
-            <div id="sendmessage">
-            	<input id="user-input" type="text" onkeydown="if (event.keyCode == 13) { doTalk(); }" placeholder="Send message..." autocomplete="off" />
-                <button id="send" onclick="doTalk()"></button>
-            </div>
-
-        </div>
-    </div>
-
     <!-- BloomIO Personalization -->
     <script src="../assets/js/personalization.js"></script>
 
@@ -148,8 +200,10 @@
     <!-- BloomIO Analytics -->
     <script src="../assets/js/analytics.js"></script>
 
-    <!-- Pandorabots API & BloomIO Chatbot -->
+    <!-- Pandorabots API -->
     <script src="../vendor/pandorabots/talk.js"></script>
+
+    <!-- BloomIO Demo chat -->
     <script src="js/demo-chat.js"></script>
 
     <!-- Page Specific Chat Sequence -->
@@ -225,14 +279,6 @@
           afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
       }, 10000);
     } // End if
-
-
-
-
-
-
-
-
 
     /**
      *
@@ -374,15 +420,6 @@
 
     } // End if
 
-
-
-
-
-
-
-
-
-
     /**
      *
      * After visiting MEMBERSHIP page (cookie 2)
@@ -523,13 +560,6 @@
 
     } // End if
 
-
-
-
-
-
-
-
     /**
      * Demo COMPLETE (cookie 3)
      *
@@ -553,16 +583,6 @@
       }, 1200);
 
     } // End if
-
-
-
-
-
-
-
-
-
-
 
     /**
      * doFirstName
@@ -839,7 +859,6 @@
         }, 133000);
 
     };
-
     </script>
 
   </body>

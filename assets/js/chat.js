@@ -218,5 +218,4 @@ function doFirstName() {
     deviceFirstNameRef.update({
         first_name: user_first_name_input
     });
-
 };
