@@ -20,6 +20,89 @@
   </head>
   <body>
 
+    <!-- Chatbot -->
+    <div id="toggle-chatbox-btn">
+      <div class="all-bouncers">
+        <div class="bouncer one"></div>
+        <div class="bouncer two"></div>
+        <div class="bouncer three"></div>
+      </div>
+    </div>
+
+    <div id="chatbox" class="show">
+      <div class="header-buttons">
+        <div id="hide-chatbox-btn" class="header-button"></div>
+      </div>
+
+      <div id="output-area">
+        <div id="profile" class="chat-jumbo">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
+            <p>Chip <span>Online</span></p>
+        </div>
+      </div>
+
+      <!-- <div id="sendmessage">
+        <input id="user-input" type="text" onkeydown="if (event.keyCode == 13) { doTalk(); }" placeholder="Send message..." autocomplete="off" />
+          <button id="send" onclick="doTalk()"></button>
+      </div> -->
+    </div>
+
+    <script>
+      /**
+       * SHOW/HIDE CHATBOX
+       *
+       */
+
+      // DOM refs
+      var chatBox = document.getElementById('chatbox');
+      var toggleChatboxBtn = document.getElementById('toggle-chatbox-btn');
+      var hideChatboxBtn = document.getElementById('hide-chatbox-btn');
+
+      // http://youmightnotneedjquery.com/#add_class
+      function addClass(el, className) {
+        if (el.classList) { el.classList.add(className); }
+        else { el.className += ' ' + className; }
+      }
+
+      // http://youmightnotneedjquery.com/#remove_class
+      function removeClass(el, className) {
+        if (el.classList) { el.classList.remove(className); }
+        else { el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '); }
+      }
+
+      // Check for class
+      function hasClass(element, cls) {
+        return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+      }
+
+      // Show Chatbox
+      function showChatBox() {
+        addClass(chatBox, 'show');
+      }
+
+      // Hide Chatbox
+      function hideChatBox() {
+        removeClass(chatBox, 'show');
+      }
+
+      // Toggle Chatbox
+      function toggleChatBox() {
+        if (hasClass(chatBox, 'show') == true) {
+          removeClass(chatBox, 'show');
+          console.log('chatbox had class show');
+        } else {
+          addClass(chatBox, 'show');
+          console.log('chatbox did not have class show');
+        }
+      }
+
+      // Attach the click handler to fab and hide button when the page loads.
+      window.addEventListener('load', function() {
+        toggleChatboxBtn.addEventListener('click', toggleChatBox);
+        hideChatboxBtn.addEventListener('click', toggleChatBox);
+      });
+    </script>
+
     <!-- Google Tag Manager -->
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5CRW4D"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -92,6 +175,7 @@
         <div class="col-xs-6">
             <h2>Overview</h2>
             <p>No one has asked to join our fake credit union, but you could be the first! Just <a href="http://bloomcu.com/contact-us/" target="_blank">contact us</a> and say you would like a fake membership and we’ll email you a gold star. Keep this gold star in your records to prove your membership.</p>
+            <br/><br/><br/>
         </div>
 
         <div class="col-xs-6">
@@ -105,27 +189,6 @@
       </footer>
 
     </div><!--/Main container-->
-
-
-        <!-- Chatbot -->
-        <div id="chatbox">
-            <div id="chatview">
-
-                <div id="output-area">
-                  <div id="profile" class="chat-jumbo">
-                      <img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
-                      <p>Chip</p>
-                      <span>Online</span>
-                  </div>
-                </div>
-
-                <div id="sendmessage">
-                	<input id="user-input" type="text" onkeydown="if (event.keyCode == 13) { doTalk(); }" placeholder="Send message..." autocomplete="off" />
-                    <button id="send" onclick="doTalk()"></button>
-                </div>
-
-            </div>
-        </div>
 
     <!-- BloomIO Personalization -->
     <script src="../assets/js/personalization.js"></script>
@@ -144,8 +207,10 @@
     <!-- BloomIO Analytics -->
     <script src="../assets/js/analytics.js"></script>
 
-    <!-- Pandorabots API & BloomIO Chatbot -->
+    <!-- Pandorabots API -->
     <script src="../vendor/pandorabots/talk.js"></script>
+
+    <!-- BloomIO Demo chat -->
     <script src="js/demo-chat.js"></script>
 
     <!-- Page Specific Chat Sequence -->

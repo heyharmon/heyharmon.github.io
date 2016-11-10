@@ -21,7 +21,7 @@
   <body>
 
     <!-- Chatbot -->
-    <div id="show-chatbox-btn">
+    <div id="toggle-chatbox-btn">
       <div class="all-bouncers">
         <div class="bouncer one"></div>
         <div class="bouncer two"></div>
@@ -30,8 +30,8 @@
     </div>
 
     <div id="chatbox" class="show">
-      <div id="hide-chatbox-btn" class="header-buttons">
-        <div class="header-button"></div>
+      <div class="header-buttons">
+        <div id="hide-chatbox-btn" class="header-button"></div>
       </div>
 
       <div id="output-area">
@@ -55,36 +55,52 @@
 
       // DOM refs
       var chatBox = document.getElementById('chatbox');
-      var showChatboxBtn = document.getElementById('show-chatbox-btn');
+      var toggleChatboxBtn = document.getElementById('toggle-chatbox-btn');
       var hideChatboxBtn = document.getElementById('hide-chatbox-btn');
 
       // http://youmightnotneedjquery.com/#add_class
       function addClass(el, className) {
-          if (el.classList) { el.classList.add(className); }
-          else { el.className += ' ' + className; }
+        if (el.classList) { el.classList.add(className); }
+        else { el.className += ' ' + className; }
       }
 
       // http://youmightnotneedjquery.com/#remove_class
       function removeClass(el, className) {
-          if (el.classList) { el.classList.remove(className); }
-          else { el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '); }
+        if (el.classList) { el.classList.remove(className); }
+        else { el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '); }
+      }
+
+      // Check for class
+      function hasClass(element, cls) {
+        return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
       }
 
       // Show Chatbox
       function showChatBox() {
-          addClass(chatBox, 'show');
+        addClass(chatBox, 'show');
       }
 
       // Hide Chatbox
       function hideChatBox() {
+        removeClass(chatBox, 'show');
+      }
+
+      // Toggle Chatbox
+      function toggleChatBox() {
+        if (hasClass(chatBox, 'show') == true) {
           removeClass(chatBox, 'show');
+          console.log('chatbox had class show');
+        } else {
+          addClass(chatBox, 'show');
+          console.log('chatbox did not have class show');
+        }
       }
 
       // Attach the click handler to fab and hide button when the page loads.
-      // window.addEventListener('load', function() {
-          showChatboxBtn.addEventListener('click', showChatBox);
-          hideChatboxBtn.addEventListener('click', hideChatBox);
-      // });
+      window.addEventListener('load', function() {
+        toggleChatboxBtn.addEventListener('click', toggleChatBox);
+        hideChatboxBtn.addEventListener('click', toggleChatBox);
+      });
     </script>
 
     <!-- Google Tag Manager -->
@@ -168,6 +184,7 @@
             <p>No one has asked to join our fake credit union, but you could be the first! Just <a href="http://bloomcu.com/contact-us/" target="_blank">contact us</a> and say you would like a fake membership and we’ll email you a gold star.</p>
             <br/>
             <a class="btn btn-default btn-lg" href="membership.html" role="button">Become a Member</a>
+            <br/><br/><br/>
          </div>
         </div>
 
@@ -353,28 +370,12 @@
         document.getElementById("typing").remove();
           output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
 
-          If you think personalization is awesome and you want to be my friend, you should talk with my human creators at <a href="http://bloomcu.com" target="_blank">BloomCU</a>.
+          If you think personalization is awesome and you want to be my friend, you should talk with my human creators at <a href="https://bloomcu.com/contact-us/" target="_blank">BloomCU</a>.
 
           </div></div>`);
           var afterBotResponse = document.getElementById("output-area");
           afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
       }, 29000);
-            // Typing
-            setTimeout(function() {
-                output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
-                var afterBotResponse = document.getElementById("output-area");
-                afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-            }, 33000);
-      setTimeout(function() {
-        document.getElementById("typing").remove();
-          output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
-
-          Also, I'm still a young robot, but maybe someday I can be on your website too! <a href="http://bloomcu.com/chip-beta-list" target="_blank">Join Chip's Beta List</a>.
-
-          </div></div>`);
-          var afterBotResponse = document.getElementById("output-area");
-          afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-      }, 38000);
             // Typing
             setTimeout(function() {
                 output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
@@ -493,28 +494,12 @@
         document.getElementById("typing").remove();
           output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
 
-          If you think personalization is awesome and you want to be my friend, you should talk with my human creators at <a href="http://bloomcu.com" target="_blank">BloomCU</a>.
+          If you think personalization is awesome and you want to be my friend, you should talk with my human creators at <a href="https://bloomcu.com/contact-us/" target="_blank">BloomCU</a>.
 
           </div></div>`);
           var afterBotResponse = document.getElementById("output-area");
           afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
       }, 29000);
-            // Typing
-            setTimeout(function() {
-                output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);
-                var afterBotResponse = document.getElementById("output-area");
-                afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-            }, 33000);
-      setTimeout(function() {
-        document.getElementById("typing").remove();
-          output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
-
-          Also, I'm still a young robot, but maybe someday I can be on your website too! <a href="http://bloomcu.com/chip-beta-list" target="_blank">Join Chip's Beta List</a>.
-
-          </div></div>`);
-          var afterBotResponse = document.getElementById("output-area");
-          afterBotResponse.scrollTop = afterBotResponse.scrollHeight;
-      }, 38000);
             // Typing
             setTimeout(function() {
                 output_area.innerHTML = output_area.innerHTML + (`<div id="typing" class="message"><img src="${botAvatar}"><div class="bubble"><div class="bouncer one"></div><div class="bouncer two"></div><div class="bouncer three"></div></div>`);

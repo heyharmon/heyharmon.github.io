@@ -14,11 +14,11 @@
   -webkit-box-shadow: 0 0 12px rgba(0,0,0,0.2);
     -moz-box-shadow: 0 0 12px rgba(0,0,0,0.2);
       box-shadow: 0 0 12px rgba(0,0,0,0.2);
-	border-radius: 6px 6px 0 0;
+	border-radius: 6px;
 	overflow: hidden;
 	height: 484px;
 	position: fixed;
-	bottom: 0;
+	bottom: 100px;
 	right: 20px;
 	margin-left: -155px;
   -webkit-font-smoothing: antialiased;
@@ -57,18 +57,25 @@
 	background:#fff;
 }
 
-/* Show/hide chatbox */
+/* Show Chatbox */
 
-#show-chatbox-btn {
-  width: 56px;
-  height: 56px;
-  border-radius: 28px;
+#toggle-chatbox-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 32px;
   background: #f11e81;
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 20px;
+  right: 20px;
   cursor: pointer;
 }
+
+/* Hide Chatbox */
+
+/*.header-buttons {
+  background-color: #f11e81;
+  height: 50px;
+}*/
 
 #hide-chatbox-btn {
   background-image: url('https://js.intercomcdn.com/images/messenger-close@2x.c1cb8613.png');
@@ -82,6 +89,7 @@
   height: 50px;
   border-radius: 0 0 0 8px;
   cursor: pointer;
+  visibility: hidden;
 }
 
 #hide-chatbox-btn:hover {
@@ -174,6 +182,7 @@ div.chat-input {
 	width: 330px;
   height: 100%;
   /*height: calc(100% - 60px);*/
+  /*height: calc(100% - 50px);*/
 	overflow-y: auto;
 	overflow-x: hidden;
 	-webkit-transition: all 200ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
@@ -286,11 +295,11 @@ div.chat-input {
 * Show Chat Button bouncers
 */
 
-#show-chatbox-btn .all-bouncers {
-  margin: 13px 0 0 14px;
+#toggle-chatbox-btn .all-bouncers {
+  margin: 16px 0 0 17px;
 }
 
-#show-chatbox-btn .bouncer {
+#toggle-chatbox-btn .bouncer {
   width: 6px;
   height: 6px;
   display: inline-block;
@@ -300,14 +309,14 @@ div.chat-input {
   border-radius: 10px;
 }
 
-#show-chatbox-btn .one {
+#toggle-chatbox-btn .one {
   animation-duration: .5s;
   animation-name: bounce;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
 
-#show-chatbox-btn .two {
+#toggle-chatbox-btn .two {
   animation-duration: .5s;
   animation-name: bounce;
   animation-iteration-count: infinite;
@@ -315,7 +324,7 @@ div.chat-input {
   animation-delay: .1s;
 }
 
-#show-chatbox-btn .three {
+#toggle-chatbox-btn .three {
   animation-duration: .5s;
   animation-name: bounce;
   animation-iteration-count: infinite;
@@ -427,6 +436,11 @@ div.chat-input {
     right: 0;
     margin-left: 0;
     border-radius: 0;
+    visibility: hidden;
+  }
+
+  #hide-chatbox-btn {
+    visibility: visible;
   }
 
   #chatview {

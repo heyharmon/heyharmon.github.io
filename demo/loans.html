@@ -21,7 +21,7 @@
   <body>
 
     <!-- Chatbot -->
-    <div id="show-chatbox-btn">
+    <div id="toggle-chatbox-btn">
       <div class="all-bouncers">
         <div class="bouncer one"></div>
         <div class="bouncer two"></div>
@@ -30,8 +30,8 @@
     </div>
 
     <div id="chatbox" class="show">
-      <div id="hide-chatbox-btn" class="header-buttons">
-        <div class="header-button"></div>
+      <div class="header-buttons">
+        <div id="hide-chatbox-btn" class="header-button"></div>
       </div>
 
       <div id="output-area">
@@ -55,36 +55,52 @@
 
       // DOM refs
       var chatBox = document.getElementById('chatbox');
-      var showChatboxBtn = document.getElementById('show-chatbox-btn');
+      var toggleChatboxBtn = document.getElementById('toggle-chatbox-btn');
       var hideChatboxBtn = document.getElementById('hide-chatbox-btn');
 
       // http://youmightnotneedjquery.com/#add_class
       function addClass(el, className) {
-          if (el.classList) { el.classList.add(className); }
-          else { el.className += ' ' + className; }
+        if (el.classList) { el.classList.add(className); }
+        else { el.className += ' ' + className; }
       }
 
       // http://youmightnotneedjquery.com/#remove_class
       function removeClass(el, className) {
-          if (el.classList) { el.classList.remove(className); }
-          else { el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '); }
+        if (el.classList) { el.classList.remove(className); }
+        else { el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '); }
+      }
+
+      // Check for class
+      function hasClass(element, cls) {
+        return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
       }
 
       // Show Chatbox
       function showChatBox() {
-          addClass(chatBox, 'show');
+        addClass(chatBox, 'show');
       }
 
       // Hide Chatbox
       function hideChatBox() {
+        removeClass(chatBox, 'show');
+      }
+
+      // Toggle Chatbox
+      function toggleChatBox() {
+        if (hasClass(chatBox, 'show') == true) {
           removeClass(chatBox, 'show');
+          console.log('chatbox had class show');
+        } else {
+          addClass(chatBox, 'show');
+          console.log('chatbox did not have class show');
+        }
       }
 
       // Attach the click handler to fab and hide button when the page loads.
-      // window.addEventListener('load', function() {
-          showChatboxBtn.addEventListener('click', showChatBox);
-          hideChatboxBtn.addEventListener('click', hideChatBox);
-      // });
+      window.addEventListener('load', function() {
+        toggleChatboxBtn.addEventListener('click', toggleChatBox);
+        hideChatboxBtn.addEventListener('click', toggleChatBox);
+      });
     </script>
 
     <!-- Google Tag Manager -->
@@ -159,6 +175,7 @@
         <div class="col-xs-6">
             <h2>Overview</h2>
             <p>We don’t give real auto loans because we’re not a real credit union. But if we did give auto loans our rates would be awesome. Like really, really, awesome.</p>
+            <br/><br/><br/>
         </div>
 
         <div class="col-xs-6">
