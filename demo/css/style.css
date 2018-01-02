@@ -51,6 +51,8 @@ body { padding-top: 56px; }
   color: #ffffff;
 }
 
+
+
 /* ACME Navbar */
 
 .navbar-default.navbar-acme {
@@ -66,6 +68,16 @@ body { padding-top: 56px; }
   height: 33px;
 }
 
+.navbar-toggle {
+  padding: 12px 10px;
+  margin-top: 19px;
+}
+
+/* Hide Personalization links in ACME navbar on desktop */
+#bloomcu-navbar-collapse li.mobile-demo-link {
+  visibility: hidden;
+}
+
 /*
 * Jumbotrons
 */
@@ -79,7 +91,7 @@ body { padding-top: 56px; }
 /* Home */
 #home-jumbotron {
   height: 70vh;
-  background-image: url("https://bloomcu.com/wp-content/uploads/2013/06/home-hero-dad-black.jpg");
+  background-image: url("../img/home-hero.jpg");
   padding: 160px 0 0 0;
 }
 #home-jumbotron h1 {
@@ -88,11 +100,11 @@ body { padding-top: 56px; }
 
 /* Subpages */
 #loans-jumbotron {
-  background-image: url("https://meridiacu.com/wp-content/uploads/2016/04/hero-auto-loan-2.jpg?id=778");
+  background-image: url("../img/hero-auto-loan.jpg");
 }
 
 #membership-jumbotron {
-  background-image: url("https://meridiacu.com/wp-content/uploads/2016/04/hero-courtesy-pay.jpg?id=543");
+  background-image: url("../img/hero-membership.jpg");
 }
 
 /*
@@ -103,10 +115,31 @@ body { padding-top: 56px; }
   list-style-type: none;
   padding: 0px;
 }
+
 .bio-analyticsbox li {
   padding: 0 0 5px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: ;
+}
+
+
+/* Mobile */
+@media only screen and (max-device-width: 667px), screen and (max-width: 450px) {
+
+  /* Show Personalization links in ACME navbar on desktop */
+  #bloomcu-navbar-collapse li.mobile-demo-link {
+    visibility: visible;;
+  }
+
+  /* Demo navbar not fixed */
+  nav.navbar-demo.navbar-fixed-top {
+    position: relative;
+  }
+
+  /* Body no padding top */
+  body {
+    padding-top: 0 !important;
+  }
 }

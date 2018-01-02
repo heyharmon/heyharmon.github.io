@@ -21,30 +21,21 @@
   <body>
 
     <!-- Chatbot -->
-    <div id="toggle-chatbox-btn">
-      <div class="all-bouncers">
-        <div class="bouncer one"></div>
-        <div class="bouncer two"></div>
-        <div class="bouncer three"></div>
-      </div>
-    </div>
-
     <div id="chatbox" class="show">
       <div class="header-buttons">
         <div id="hide-chatbox-btn" class="header-button"></div>
       </div>
 
-      <div id="output-area">
-        <div id="profile" class="chat-jumbo">
-            <img src="https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35" />
-            <p>Chip <span>Online</span></p>
-        </div>
+      <div id="profile" class="chat-jumbo" style="height: 80px;">
+          <img src="../assets/img/chip-avatar.jpg" />
+          <p>Chip <span>Online</span></p>
       </div>
 
-      <!-- <div id="sendmessage">
-        <input id="user-input" type="text" onkeydown="if (event.keyCode == 13) { doTalk(); }" placeholder="Send message..." autocomplete="off" />
-          <button id="send" onclick="doTalk()"></button>
-      </div> -->
+      <div id="output-area"></div>
+    </div>
+
+    <div id="toggle-chatbox-btn" class="show">
+      <div id="toggle-chatbox-btn-icon"></div>
     </div>
 
     <script>
@@ -54,17 +45,18 @@
        */
 
       // DOM refs
-      var chatBox = document.getElementById('chatbox');
-      var toggleChatboxBtn = document.getElementById('toggle-chatbox-btn');
-      var hideChatboxBtn = document.getElementById('hide-chatbox-btn');
+      var chatBox = document.getElementById('chatbox'),
+          toggleChatboxBtn = document.getElementById('toggle-chatbox-btn'),
+          hideChatboxBtn = document.getElementById('hide-chatbox-btn'),
+          windowBody = document.body;
 
-      // http://youmightnotneedjquery.com/#add_class
+      // https://youmightnotneedjquery.com/#add_class
       function addClass(el, className) {
         if (el.classList) { el.classList.add(className); }
         else { el.className += ' ' + className; }
       }
 
-      // http://youmightnotneedjquery.com/#remove_class
+      // https://youmightnotneedjquery.com/#remove_class
       function removeClass(el, className) {
         if (el.classList) { el.classList.remove(className); }
         else { el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '); }
@@ -75,36 +67,48 @@
         return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
       }
 
-      // Show Chatbox
-      function showChatBox() {
-        addClass(chatBox, 'show');
-      }
-
-      // Hide Chatbox
-      function hideChatBox() {
+      // Remove Chatbox
+      function removeChatBox() {
+        /* Hide chatbox */
         removeClass(chatBox, 'show');
+        /* Change toggle btn icon */
+        removeClass(toggleChatboxBtn, 'show');
+        /* Remove toggle class from body */
+        removeClass(windowBody, 'chatbox-open');
       }
 
       // Toggle Chatbox
       function toggleChatBox() {
         if (hasClass(chatBox, 'show') == true) {
+          /* Hide chatbox */
           removeClass(chatBox, 'show');
-          console.log('chatbox had class show');
+          /* Change toggle btn icon */
+          removeClass(toggleChatboxBtn, 'show');
+          /* Remove toggle class from body */
+          removeClass(windowBody, 'chatbox-open');
         } else {
+          /* Show chatbox */
           addClass(chatBox, 'show');
-          console.log('chatbox did not have class show');
+          /* Change toggle btn icon */
+          addClass(toggleChatboxBtn, 'show');
+          /* Add toggle class to body */
+          addClass(windowBody, 'chatbox-open');
         }
       }
 
       // Attach the click handler to fab and hide button when the page loads.
       window.addEventListener('load', function() {
+        /* Add toggle class to body */
+        addClass(windowBody, 'chatbox-open');
+        /* Listen to toggle buttons */
         toggleChatboxBtn.addEventListener('click', toggleChatBox);
-        hideChatboxBtn.addEventListener('click', toggleChatBox);
+        hideChatboxBtn.addEventListener('click', removeChatBox);
       });
     </script>
+    <!-- /Chatbot -->
 
     <!-- Google Tag Manager -->
-    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5CRW4D"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CRW4D"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -118,14 +122,14 @@
       <div class="container-fluid">
 
         <div class="navbar-header">
-          <a class="navbar-brand" href="/demo/">
+          <a class="navbar-brand" href="index.html">
             <img src="../assets/img/bloomcu-personalization-logo-light.png" alt="BloomCU Personalization Logo">
           </a>
         </div>
 
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="personalization-navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://bloomcu.com" target="_blank">Back to BloomCU.com</a></li>
+            <li><a href="https://bloomcu.com/persona" target="_blank">Back to BloomCU.com</a></li>
             <li><a href="restart.html">Restart Demo</a></li>
           </ul>
         </div>
@@ -138,22 +142,24 @@
       <div class="container">
 
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bloomcu-navbar-collapse" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/demo/">
+          <a class="navbar-brand" href="index.html">
             <img src="../assets/img/acme-logo-dark.png" alt="BloomCU Logo">
           </a>
         </div>
 
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="bloomcu-navbar-collapse" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li class="active"><a href="loans.html">Auto Loans</a></li>
             <li><a href="membership.html">Membership</a></li>
+            <li class="mobile-demo-link"><a href="https://bloomcu.com/persona" target="_blank">Back to BloomCU.com</a></li>
+            <li class="mobile-demo-link"><a href="restart.html">Restart Demo</a></li>
           </ul>
         </div>
 
@@ -191,7 +197,7 @@
     </div><!--/Main container-->
 
     <!-- BloomIO Personalization -->
-    <script src="../assets/js/personalization.js"></script>
+    <script src="js/personalization.js"></script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -420,7 +426,7 @@
         document.getElementById("typing").remove();
           output_area.innerHTML = output_area.innerHTML + (`<div class="message"><img src="${botAvatar}"><div class="bubble">
 
-          Thanks for viewing BloomCU's personalization demo! If you want to learn more about personalization, <a href="http://bloomcu.com/contact-us/" target="_blank">contact us</a>. You can also <a href="restart.html">restart this demo</a>.
+          Thanks for viewing BloomCU's personalization demo! If you want to learn more about personalization, <a href="https://bloomcu.com/contact-us/" target="_blank">contact us</a>. You can also <a href="restart.html">restart this demo</a>.
 
           </div></div>`);
           var afterBotResponse = document.getElementById("output-area");
