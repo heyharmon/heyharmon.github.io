@@ -109,7 +109,15 @@
     </script>
     <!-- /Chatbot -->
 
-    
+    <!-- Google Tag Manager -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CRW4D"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5CRW4D');</script> -->
+    <!-- End Google Tag Manager -->
 
     <!-- Demo Navbar -->
     <nav class="navbar navbar-static-top navbar-default navbar-demo navbar-fixed-top">
@@ -209,13 +217,13 @@
     <!-- Firebase -->
     <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
     <!-- BloomIO Analytics -->
-    <script src="../assets/js/analytics.js"></script>
+    <!-- <script src="../assets/js/analytics.js"></script> -->
 
     <!-- Pandorabots API -->
-    <script src="../vendor/pandorabots/talk.js"></script>
+    <!-- <script src="../vendor/pandorabots/talk.js"></script> -->
 
     <!-- BloomIO Demo chat -->
-    <script src="js/demo-chat.js"></script>
+    <!-- <script src="js/demo-chat.js"></script> -->
 
     <!-- Page Specific Chat Sequence -->
     <script>
@@ -223,6 +231,10 @@
     console.info('stageOneCompleted = ', stageOneCompleted);
     console.info('demoCompleteCookie = ', demoCompleteCookie);
     console.info('firstNameCookie = ', firstNameCookie);
+
+    var botAvatar = "https://firebasestorage.googleapis.com/v0/b/bloomchat-5987d.appspot.com/o/clients%2Fbloomcu%2Fmedia%2Fbot-avatar.jpg?alt=media&token=db67be0f-423c-431c-b91d-3288083bfc35",
+       output_area = document.getElementById("output-area"),
+       chat_area = output_area.innerHTML;
 
     /**
      * Demo Step 1
